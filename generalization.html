@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<head><script src="gdpr/gdprscriptc00e.js?buildTime=1605918293&amp;hasRemindMe=true&amp;stealth=false"></script>
+		<title>Generalization - PN</title><meta property="og:site_name" content="PN" />
+<meta property="og:title" content="Generalization" />
+<meta property="og:description" content="Related Publications:   Parth Natekar , Manik Sharma. &quot; Representation Based Complexity Measures for Predicting Generalization in Deep Learning. &quot;  Winning Solution of the NeurIPS Competition on..." />
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		
+		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="cdn2/css/sites9f7f.css?buildTime=1605918293" />
+<link rel="stylesheet" type="text/css" href="cdn2/css/old/fancybox287e.css?1605918293" />
+<link rel="stylesheet" type="text/css" href="cdn2/css/social-icons2a69.css?buildtime=1605918293" media="screen,projection" />
+<link rel="stylesheet" type="text/css" href="files/main_style060e.css?1606907075" title="wsite-theme-css" />
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+
+<link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<style type='text/css'>
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {font-family:"Quicksand" !important;}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{font-family:"Quicksand" !important;}
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-long .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-large .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {font-family:"Quicksand" !important;font-weight:400 !important;}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{font-family:"Quicksand" !important;font-weight:700 !important;color:#a1a1a1 !important;text-transform:  uppercase !important;}
+#wsite-title {font-family:"Quicksand" !important;font-weight:700 !important;}
+.wsite-menu-default a {font-family:"Quicksand" !important;font-weight:700 !important;}
+.wsite-menu a {font-family:"Quicksand" !important;font-weight:700 !important;}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline,.wsite-header-section .wsite-content-title {font-family:"Quicksand" !important;font-weight:400 !important;}
+.wsite-headline-paragraph,.wsite-header-section .paragraph {font-family:"Quicksand" !important;font-weight:400 !important;}
+.wsite-button-inner {font-family:"Quicksand" !important;font-weight:700 !important;}
+.wsite-not-footer blockquote {font-family:"Playfair Display" !important;font-weight:400 !important;}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+.wsite-button-small .wsite-button-inner {font-size:16px !important;}
+.wsite-button-large .wsite-button-inner {font-size:16px !important;}
+@media screen and (min-width: 767px) {.wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {font-size:16px !important;}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{font-size:12px !important;}
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-long .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-large .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {font-size:40px !important;}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{font-size:12px !important;}
+#wsite-title {}
+.wsite-menu-default a {}
+.wsite-menu a {}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline,.wsite-header-section .wsite-content-title {}
+.wsite-headline-paragraph,.wsite-header-section .paragraph {}
+.wsite-button-inner {}
+.wsite-not-footer blockquote {font-size:38px !important;line-height:59px !important;}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+}</style>
+
+		<script>
+var STATIC_BASE = 'http://cdn1.editmysite.com/';
+var ASSETS_BASE = 'http://cdn2.editmysite.com/';
+var STYLE_PREFIX = 'wsite';
+</script>
+<script src='ajax/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+
+<script type="text/javascript" src="cdn2/js/lang/en/stl38c1.js?buildTime=1605918293&amp;"></script>
+<script src="cdn2/js/site/main9f7f.js?buildTime=1605918293"></script><script type="text/javascript">
+	function initFlyouts(){
+		initPublishedFlyoutMenus(
+			[{"id":"665056425360735246","title":"Home","url":"index.html","target":"","nav_menu":false,"nonclickable":false},{"id":"203042299298659043","title":"Research","url":"research.html","target":"","nav_menu":false,"nonclickable":true},{"id":"858643128598473886","title":"Art","url":"art.html","target":"","nav_menu":false,"nonclickable":false},{"id":"466450504315893541","title":"Experience","url":"experience.html","target":"","nav_menu":false,"nonclickable":false}],
+			"926857593108650871",
+			'',
+			'active',
+			false,
+			{"navigation\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}} class=\"wsite-menu-item-wrap\">\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\t{{#membership_required}}\n\t\t\tdata-membership-required=\"{{.}}\"\n\t\t{{\/membership_required}}\n\t\tclass=\"wsite-menu-item\"\n\t\t>\n\t\t{{{title_html}}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n","navigation\/flyout\/list":"<div class=\"wsite-menu-wrap\" style=\"display:none\">\n\t<ul class=\"wsite-menu\">\n\t\t{{#children}}{{> navigation\/flyout\/item}}{{\/children}}\n\t<\/ul>\n<\/div>\n","navigation\/flyout\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-subitem-wrap {{#is_current}}wsite-nav-current{{\/is_current}}\"\n\t>\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\tclass=\"wsite-menu-subitem\"\n\t\t>\n\t\t<span class=\"wsite-menu-title\">\n\t\t\t{{{title_html}}}\n\t\t<\/span>{{#has_children}}<span class=\"wsite-menu-arrow\">&gt;<\/span>{{\/has_children}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n"},
+			{}
+		)
+	}
+</script>
+		
+		
+	</head>
+	<body class="header-page  wsite-page-generalization  full-width-body-off header-overlay-on alt-nav-off  wsite-theme-light"><div class="wrapper">
+    <div class="birdseye-header">
+      <div class="nav-wrap">
+        <div class="container">
+          <div class="logo"><span class="wsite-logo">
+
+	<a href="index.html">
+	
+	<span id="wsite-title">PN</span>
+	
+	</a>
+
+</span></div>
+          <div class="nav desktop-nav"><ul class="wsite-menu-default">
+		<li id="pg665056425360735246" class="wsite-menu-item-wrap">
+			<a
+						href="index.html"
+				class="wsite-menu-item"
+				>
+				Home
+			</a>
+			
+		</li>
+		<li id="pg203042299298659043" class="wsite-menu-item-wrap">
+			<a
+				class="wsite-menu-item"
+				>
+				Research
+			</a>
+			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-483650978285722307"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="projects.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Projects
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-451617180871056002"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="publications.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Publications
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-683974786285307206"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="future-directions.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Future Directions
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+		</li>
+		<li id="pg858643128598473886" class="wsite-menu-item-wrap">
+			<a
+						href="art.html"
+				class="wsite-menu-item"
+				>
+				Art
+			</a>
+			
+		</li>
+		<li id="pg466450504315893541" class="wsite-menu-item-wrap">
+			<a
+						href="experience.html"
+				class="wsite-menu-item"
+				>
+				Experience
+			</a>
+			
+		</li>
+</ul>
+</div>
+          <a class="hamburger" aria-label="Menu" href="#"><span></span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner-wrap">
+      <div class="wsite-elements wsite-not-footer wsite-header-elements">
+	<div class="wsite-section-wrap">
+	<div  class="wsite-section wsite-header-section wsite-section-bg-color" style="vertical-align: middle;height: auto;background-color: #000000;background-image: none;is_customized: 1;" >
+		<div class="wsite-section-content">
+			
+          <div class="container">
+            <div class="banner">
+				<div class="wsite-section-elements">
+					<h2 class="wsite-content-title"><font size="7">Understanding Generalization in Deep Learning</font><br /><font size="5">Finding complexity measures that predict generalization (<a href="https://github.com/parthnatekar/pgdl" target="_blank">Github</a>)</font></h2>
+				</div>
+			</div>
+          </div>
+      
+		</div>
+		<div class=""></div>
+	</div>
+</div>
+
+</div>
+
+    </div>
+
+    <div class="main-wrap">
+      <div id="wsite-content" class="wsite-elements wsite-not-footer">
+	<div class="wsite-section-wrap">
+	<div class="wsite-section wsite-body-section wsite-background-32"  >
+		<div class="wsite-section-content">
+          <div class="container">
+			<div class="wsite-section-elements">
+				<div class="paragraph"><font size="5"><strong>Related Publications:</strong>&nbsp;</font><br /><span></span><strong style="color:rgb(34, 34, 34)">Parth Natekar</strong><span style="color:rgb(34, 34, 34)">, Manik Sharma. "<strong>Representation Based Complexity Measures for Predicting Generalization in Deep Learning.</strong>"&nbsp;</span><em style="color:rgb(34, 34, 34)">Winning Solution of the NeurIPS Competition on Predicting Generalization in Deep Learning (NeurIPS 2020). (<a href="uploads/1/2/7/2/127245040/pgdl_2020.pdf">Link</a>). Updated Version written with runner-up teams to appear in NeurIPS 2020 Post-Proceedings.</em><span style="color:rgb(34, 34, 34)"></span></div>
+
+<div class="paragraph"><strong>We recently placed first at the&nbsp;<a href="https://sites.google.com/view/pgdl2020/home?authuser=0" target="_blank">NeurIPS competition for Predicting Generalization in Deep Learning (2020)</a>, and will be making a presentation at NeurIPS this year.</strong>&nbsp;Our winning solution was based on&nbsp;<strong>two characteristics of the internal feature representations of deep networks - consistency and robustness</strong>. We achieved a <strong>high score of 22.92</strong> on the final task.&nbsp;&#8203;A gist of this and related ideas is below. A more detailed manuscript will be published as part of the NeurIPS 2020 post-proceedings, and the code is available on my <a href="https://github.com/parthnatekar/pgdl" target="_blank">github</a>.<br /><br />The generalization ability of deep neural networks, despite being significantly overparametrized, is a property of great interest from both theoretical and application perspectives. Understanding the factors behind generalization and creating practical measures which are predictive of generalization can lead to better network designs as well as a better theoretical understanding of this phenomenon.<br /><br />Previous research has attempted to provide theoretical generalization bounds on the test error based on some intrinsic property of deep networks.&nbsp;However, many of the measures and bounds discussed above are not of practical use, and do not provide intuitive support to practitioners in terms of designing models which generalize better.&nbsp;We explore various complexity measures that are readily usable and that can predict the generalization performance of deep neural networks without the need for a test dataset.&nbsp;</div>
+
+<div><div style="height: 10px; overflow: hidden; width: 100%;"></div>
+<hr class="styled-hr" style="width:100%;"></hr>
+<div style="height: 20px; overflow: hidden; width: 100%;"></div></div>
+
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+					
+						
+
+<div class="paragraph"><strong>(1) Solution 1: Consistency of internal representations<br />&#8203;</strong><br /><span>Models which generalize well are likely to have more consistent feature representations. This follows from theories of how human beings generalize - through creating consistent symbolic representations of concepts. This is logical - if a deep neural network assigns the same label to two images, they have to converge into a similar representation at some stage of the network. Measuring the consistency of representation inside the network would then tell us about the generalization capacity of that network.</span><br />&#8203;<br /><span>We <strong>measure the consistency of internal representation using the </strong><strong>Davies Bouldin Index </strong>to quantify the clustering quality of intermediate representations where the labels are the training labels.&nbsp;</span></div>
+
+
+					
+				</td>				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+					
+						
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:100px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+<a>
+<img src="uploads/1/2/7/2/127245040/db-2_orig.png" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+
+					
+				</td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+
+<div><div style="height: 10px; overflow: hidden; width: 100%;"></div>
+<hr class="styled-hr" style="width:100%;"></hr>
+<div style="height: 20px; overflow: hidden; width: 100%;"></div></div>
+
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+					
+						
+
+<div class="paragraph"><strong>(2) Solution 2: Robustness to valid perturbations</strong><br /><br /><span>&#8203;Robustness of a model to plausible perturbations in the input space is another marker for generalization capacity. For measuring robustness of the network representations to valid or plausible perturbations, we use Mixup.<strong> In Mixup, we check performance of the model on linear combinations of input samples within the same label</strong>. It is important that the perturbations are 'valid', without which the network would move into a region of the feature manifold that it has never seen before. Identifying such 'valid' perturbations is difficult, and amounts to finding the independent causal components in the input image and identifying valid interventions on these. A na&iuml;ve&nbsp;way of doing this is to take linear combinations of input samples, since this will only perturb input samples in directions the network has already seen. We use Mixup also as a proxy for the ratio of random labels in the training data, based on the presumption that linear combinations of samples where even one sample is randomly labelled will be misclassified by the model.</span></div>
+
+
+					
+				</td>				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+					
+						
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:100px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+<a>
+<img src="uploads/1/2/7/2/127245040/published/mixup8bef.png?1606502647" alt="Picture" style="width:328;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+
+					
+				</td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+
+<div><div style="height: 10px; overflow: hidden; width: 100%;"></div>
+<hr class="styled-hr" style="width:100%;"></hr>
+<div style="height: 20px; overflow: hidden; width: 100%;"></div></div>
+
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+					
+						
+
+<div class="paragraph"><strong>(3) Margin Distribution to measure separation of representations&nbsp;</strong><br /><br />The margin distribution, an idea taken from traditional shallow learning approaches like SVMs, has been shown to be correlated to generalization. The margin distribution at an intermediate layer is a measure of how far away samples are from being classified into another class. We demonstrate that the <strong>augmented margin distribution</strong> is a much better metric at predicting generalization, and can take into account overfitted and outlier samples. We compare various augmentations including image augmentations, adverserial perturbations, and mixup, and evaluate them to see which of these provides most value for predicting generalization.</div>
+
+
+					
+				</td>				<td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+					
+						
+
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:90px;padding-bottom:0px;margin-left:0px;margin-right:0px;text-align:center">
+<a>
+<img src="uploads/1/2/7/2/127245040/margin-2_orig.png" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+
+
+					
+				</td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+			</div>
+		</div>
+      </div>
+
+	</div>
+</div>
+
+</div>
+
+    </div>
+
+    <div class="footer-wrap">
+        <div class="footer">
+
+<style type="text/css">
+	@font-face {
+		font-family: SQMarket-Medium;
+		font-style: normal;
+		font-weight: 500;
+		src:
+			url("http://cdn2.editmysite.com/fonts/SQ_Market/sqmarket-medium.woff2") format("woff2"),
+			url("http://cdn2.editmysite.com/fonts/SQ_Market/sqmarket-medium.woff") format("woff");
+	}
+</style>
+
+  <div id="navMobile" class="nav mobile-nav">
+    <a class="hamburger" aria-label="Menu" href="#"><span></span></a>
+    <ul class="wsite-menu-default">
+    		<li id="pg665056425360735246" class="wsite-menu-item-wrap">
+    			<a
+    						href="index.html"
+    				class="wsite-menu-item"
+    				>
+    				Home
+    			</a>
+    			
+    		</li>
+    		<li id="pg203042299298659043" class="wsite-menu-item-wrap">
+    			<a
+    				class="wsite-menu-item"
+    				>
+    				Research
+    			</a>
+    			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-483650978285722307"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="projects.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Projects
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-451617180871056002"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="publications.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Publications
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-683974786285307206"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="future-directions.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			Future Directions
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+    		</li>
+    		<li id="pg858643128598473886" class="wsite-menu-item-wrap">
+    			<a
+    						href="art.html"
+    				class="wsite-menu-item"
+    				>
+    				Art
+    			</a>
+    			
+    		</li>
+    		<li id="pg466450504315893541" class="wsite-menu-item-wrap">
+    			<a
+    						href="experience.html"
+    				class="wsite-menu-item"
+    				>
+    				Experience
+    			</a>
+    			
+    		</li>
+    </ul>
+  </div>
+
+	<script type="text/javascript" src="files/theme/plugins48cf.js?1567323041"></script>
+  <script type="text/javascript" src="files/theme/custom48cf.js?1567323041"></script>
+    <div id="customer-accounts-app"></div>
+    <script src="cdn2/js/site/main-customer-accounts-site9f7f.js?buildTime=1605918293"></script>
+	</body>
+
+</html>
