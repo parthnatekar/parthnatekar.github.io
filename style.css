@@ -995,6 +995,7 @@ footer {
   /* Mobile navbar toggle */
   .mobile-nav-toggle {
     display: block;
+    margin-left: auto;
   }
   
   .nav-menu {
